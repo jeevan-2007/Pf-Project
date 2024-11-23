@@ -2,10 +2,13 @@
 #include <windows.h>
 #include <conio.h>
 #include <math.h>
-
+#include<string.h>
 #define A4 440.0
 #define TEMPO 100
 
+void setColor(int color) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
 // Structure to represent a note
 typedef struct
 {
@@ -158,6 +161,7 @@ void handleKeyPress(int choice, char key)
 {
     if (choice == 1)
     {
+        
         switch (key)
         {
         case 'q':
@@ -282,10 +286,10 @@ void handleKeyPress(int choice, char key)
         case 't':
             playNote('A', 3, TEMPO, 2);
             break;
-        case 'y':
+        case '6':
             playNote('&', 3, TEMPO, 2);
             break;
-        case '7':
+        case 'Y':
             playNote('B', 3, TEMPO, 2);
             break;
         case 'u':
@@ -350,8 +354,8 @@ void handleKeyPress(int choice, char key)
             break;
         default:
             break;
-        }
-    }
+        }}
+
         if (choice == 3)
         {
             switch (key)
@@ -401,10 +405,10 @@ void handleKeyPress(int choice, char key)
             case 'o':
                 playNote('A', 6, TEMPO, 3);
                 break;
-            case 'z':
+            case '0':
                 playNote('&', 6, TEMPO, 3);
                 break;
-            case 's':
+            case 'z':
                 playNote('B', 6, TEMPO, 3);
                 break;
             case 'x':
@@ -416,10 +420,10 @@ void handleKeyPress(int choice, char key)
             case 'c':
                 playNote('D', 7, TEMPO, 3);
                 break;
-            case 'v':
+            case 'f':
                 playNote('*', 7, TEMPO, 3);
                 break;
-            case 'g':
+            case 'v':
                 playNote('E', 7, TEMPO, 3);
                 break;
             case 'b':
@@ -437,10 +441,10 @@ void handleKeyPress(int choice, char key)
             case 'm':
                 playNote('A', 7, TEMPO, 3);
                 break;
-            case ',':
+            case 'k':
                 playNote('&', 7, TEMPO, 3);
                 break;
-            case 'l':
+            case ',':
                 playNote('B', 7, TEMPO, 3);
                 break;
             case '.':
@@ -453,20 +457,140 @@ void handleKeyPress(int choice, char key)
                 break;
             }
         }
-}
-int main()
-{
-    int choice;
-    printf("Enter the octave range you want:\n1. A0-C#3\n2. D3-F#5\n3. G5-C8\n");
-    scanf("%d", &choice);
-    printf("Press keys z-m for notes C4-B4, s-k for notes C5-B5. Press ESC to exit.\n");
-
+    }
+    void printkeyboard(int choice1){
+        if (choice1==1){
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+printf("\t\t\t\t| `       |  1     A#0     3     C#1     D#     6     F#     G#     A#1     0     -     =      Backspace |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Tab     |     A0     B0     C1     D1     E1     F1     G1     A1     B1     P     [     ]     \      | |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Caps    |     A     C#2     D#2     F     F#2     G#2     A#2     K     C#3     ;     '     Enter      |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Shift   |     C2     D2     E2     F2     G2     A2     B2     C3     .     /     |     Shift          |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Ctrl    |     Alt     |     Spacebar     |     Alt     |     Ctrl                                      |\n");
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+        }
+        if(choice1==2){
+   
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+printf("\t\t\t\t| `       |  1     D#3     3     F#3     G#3     A#3     7     C#4     D#4     0     -     =    Backspace |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Tab     |     D3     E3     F3     G3     A3     B3     C4     D4     E4     P     [     ]     \      | |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Caps    |     A     F#4     G#4     A#4     G     C#5     D#5     K     F#5     ;     '     Enter      |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Shift   |     F4     G4     A4     B4     C5     D5     E5     F5     .     /     |     Shift          |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Ctrl    |     Alt     |     Spacebar     |     Alt     |     Ctrl                                      |\n");
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+        }
+        if(choice1==3){
+            
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+printf("\t\t\t\t| `       |  1     G#5     3     A#5     C#6     D#6     7     F#6     G#6     A#6     -     =      Backspace |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Tab     |     G5     A5     B5     C6     D6     E6     F6     G6     A6     P     [     ]     \      | |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Caps    |     A     S     C#7     D#7     G     F#7     G#7     A#7     L     ;     '     Enter      |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Shift   |     B6     C7     D7     E7     F7     G7     A7     B7     C8     /     |     Shift          |\n");
+printf("\t\t\t\t|--------------------------------------------------------------------------------------------------------|\n");
+printf("\t\t\t\t| Ctrl    |     Alt     |     Spacebar     |     Alt     |     Ctrl                                      |\n");
+printf("\t\t\t\t+--------------------------------------------------------------------------------------------------------+\n");
+        }
+            
+    }
+    void play(){
+        int choice1;
+    printf("                                         Enter your choice ");
+    printf("\n                                             KEYS \n");
+    printf("                                            1. A0-C#3\n");
+    printf("                                            2. D3-F#5\n");
+    printf("                                            3. G5-C8\n");
+    scanf("%d", &choice1);
+    printkeyboard(choice1);
+    
     while (1)
     {
         if (_kbhit())
         {
             char key = _getch();
-            handleKeyPress(choice, key);
+            handleKeyPress(choice1, key);
+        }
+    }
+
+    }
+    void about() {
+    printf("\nVirtual Piano Program\n");
+    printf("\n");
+    printf("       This is a simple virtual piano program where you can play musical notes using your keyboard.\n");
+    printf("                            You can add new users for a personalized experience.\n\n");
+    printf("\n");
+    setColor(12);
+    printf("                      Developed by: Hammad Younus (24K-0689)\n");
+    setColor(11);
+    printf("                                    Jeevan Kumar  (24K-0689)\n");
+    setColor(13);
+    printf("                                    Zahran Ali  (24K-0689)\n");
+    printf("\n");
+    printf("Press any key to return to the menu.\n");
+    _getch(); // Wait for user input before returning to menu
+}
+
+void displayMenu() {
+    printf("\n                                       Virtual Piano Interface\n");
+    printf("                                            1. Play Piano\n");
+    printf("                                            2. View About\n");
+    printf("                                            3. Add New User\n");
+    printf("                                            4. View Users\n");
+    printf("                                            5. Exit\n");
+    printf("\n");
+    printf("                                         Please choose an option: \n");
+}
+
+
+int main()
+{
+    
+    printf("                                    **************************************\n");
+    printf("                                    *                                    *\n");
+    printf("                                    *         Piano Simulator            *\n");
+    printf("                                    *                                    *\n");
+    printf("                                    **************************************\n");
+    printf("\n");
+    printf("\n");
+    printf("***********************************************************************************************************************");
+    int choice;
+       while (1) {
+        displayMenu();
+        choice = _getch() - '0'; // Get user input for menu option
+        
+        if (choice == 5) {
+            break; // Exit the program
+        }
+
+        switch (choice) {
+        case 1:
+        play();//playing sounds 
+            break;
+
+        case 2:
+            about(); // Display program information
+            break;
+
+        // case 3:
+        //     addUser(); // Add a new user
+        //     break;
+
+        // case 4:
+        //     viewUsers(); // View all added users
+        //     break;
+
+        default:
+            printf("\nInvalid choice. Please try again.\n");
+            break;
         }
     }
 
