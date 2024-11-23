@@ -351,7 +351,7 @@ void handleKeyPress(int choice, char key)
         default:
             break;
         }
-
+    }
         if (choice == 3)
         {
             switch (key)
@@ -453,7 +453,6 @@ void handleKeyPress(int choice, char key)
                 break;
             }
         }
-    }
 }
 int main()
 {
