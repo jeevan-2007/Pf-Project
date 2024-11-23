@@ -202,7 +202,7 @@ void handleKeyPress(int choice, char key)
         case '9':
             playNote('&', 1, TEMPO, 1);
             break;
-        case '0':
+        case 'o':
             playNote('B', 1, TEMPO, 1);
             break;
         case 'z':
@@ -300,7 +300,7 @@ void handleKeyPress(int choice, char key)
         case '9':
             playNote('*', 4, TEMPO, 2);
             break;
-        case '0':
+        case 'o':
             playNote('E', 4, TEMPO, 2);
             break;
         case 'z':
