@@ -398,7 +398,7 @@ void handleKeyPress(int choice, char key)
             case '9':
                 playNote('%', 6, TEMPO, 3);
                 break;
-            case '0':
+            case 'o':
                 playNote('A', 6, TEMPO, 3);
                 break;
             case 'z':
