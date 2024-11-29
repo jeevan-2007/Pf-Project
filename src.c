@@ -241,6 +241,21 @@ void addUser() {
 }
 
 // Function to view all users
+void viewUsers() {
+    if (userCount == 0) {
+        printf("No users found!\n");
+        return;
+    }
+    for (int i = 0; i < userCount; i++) {
+        printf("User: %s\nNotes: ", users[i].name);
+        for (int j = 0; j < MAX_NOTES; j++) {
+            if (users[i].notes[j][0] != '\0') {
+                printf("%s ", users[i].notes[j]);
+            }
+        }
+        printf("\n");
+    }
+}
 
 
 void playNote(char note, int octave, int duration, int choice)
