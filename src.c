@@ -159,7 +159,7 @@ double getFrequency(char note, int octave, int choice)
 // Structure to store user info
 typedef struct {
     char name[50];
-    char notes[MAX_NOTES][3];  // Store up to 5 notes, each note has a letter and octave 
+    char notes[MAX_NOTES][4];  // Store up to 5 notes, each note has a letter and octave 
 } User;
 User users[MAX_USERS];  // Array to store users
 int userCount = 0;      // Keep track of the number of users
@@ -195,7 +195,6 @@ void loadUsersFromFile() {
         }
         userCount++;
         if (userCount >= MAX_USERS) break;  // Prevent array overflow
-        
     }
     fclose(file);
 }
@@ -213,9 +212,9 @@ void addUser() {
     users[userCount].name[strcspn(users[userCount].name, "\n")] = '\0';  // Remove newline character
 
     // Ask for the notes the user wants to store (up to MAX_NOTES)
-    printf("Enter up to %d notes for %s (e.g. A1, B2, C3):\n", MAX_NOTES, users[userCount].name);
+    printf("Enter up to %d notes for %s (e.g. A1, B2#, C3):\n", MAX_NOTES, users[userCount].name);
     for (int i = 0; i < MAX_NOTES; i++) {
-        char note[3];  // A note can be represented by 2 characters, like 'A1'
+        char note[4];  // A note can be represented by 3 characters, like 'A1#'
         printf("Note %d: ", i + 1);
         fgets(note, sizeof(note), stdin);
         note[strcspn(note, "\n")] = '\0';  // Remove newline character
@@ -225,9 +224,9 @@ void addUser() {
             break;
         }
 
-        // Validate the input (it should be a valid note like "A1", "B2", etc.)
+        // Validate the input (it should be a valid note like "A1", "B2#", etc.)
         if (strlen(note) == 2 || (strlen(note) == 3 && note[1] == '#')) {
-            // Store the note (e.g. "A1", "B2")
+            // Store the note (e.g. "A1", "B2#")
             strcpy(users[userCount].notes[i], note);
         } else {
             printf("Invalid note format. Please enter a valid note.\n");
